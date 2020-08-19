@@ -20,7 +20,6 @@ class learnkit:
     class imputer:
         
                 
-        import numpy as np
         
         class Multi_Imputer():
                 
@@ -179,9 +178,9 @@ class exctract():
             self.line = line
         #
         import re
-        def extract_date(line):
+        def extract_date(self):
             """Returns an extracted date from a line of text text"""
-            
+            line = self.line
            
             pattern_1 = '((\d{1,2}\s?)?((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*[\.\,]?)) \d{4,4}'
             pattern_2 = '(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*[\.,]?[\s-](\d{1,2}[th|st|rd|nd]?,?[\s-])?\d{4,4}'
@@ -194,7 +193,7 @@ class exctract():
                 if match:
                     return match.group()
         
-        def separate_date(date):
+        def separate_date(self, date):
             """ Returns a string of date, that can be coverted to a timeStammp,
             from extracted date from a text 
             """
